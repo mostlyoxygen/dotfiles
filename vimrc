@@ -1,3 +1,5 @@
+set nocompatible
+
 syntax enable
 filetype plugin indent on
 
@@ -65,6 +67,7 @@ imap <C-Right> <C-w>l
 set colorcolumn=80
 set nowrap
 set number
+set relativenumber
 set numberwidth=7
 set laststatus=2
 set splitbelow
@@ -77,7 +80,11 @@ if has("gui_running")
     set guioptions-=r
     set guioptions-=l
     set guioptions-=L
-    set guifont=Fantasque\ Sans\ Mono\ 12
+    if has("win32")
+        set guifont=Fantasque_Sans_Mono:h12
+    else
+        set guifont=Fantasque\ Sans\ Mono\ 12
+    endif
     set background=dark
     colorscheme PaperColor
     hi pythonDocstring gui=None guifg=#AB976F
