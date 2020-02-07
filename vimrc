@@ -34,6 +34,8 @@ inoremap # X<BS>#
 autocmd FileType html setlocal sw=2 ts=2
 autocmd FileType javascript setlocal sw=2 ts=2
 
+set backspace=indent,eol,start
+
 " Display leading spaces as dots.
 set conceallevel=2
 set concealcursor=nvi
@@ -53,15 +55,10 @@ set foldmethod=indent
 set foldlevel=99
 
 " Remap the keys for navigating splits.
-" The use of cursor keys upsets purists, but nuts to 'em, this is my config.
-map <C-Left> <C-w>h
-map <C-Down> <C-w>j
-map <C-Up> <C-w>k
-map <C-Right> <C-w>l
-imap <C-Left> <C-w>h
-imap <C-Down> <C-w>j
-imap <C-Up> <C-w>k
-imap <C-Right> <C-w>l
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Configure the user interface.
 set colorcolumn=80
@@ -125,7 +122,18 @@ function! BuildStatusLine()
 endfunction
 set statusline=%!BuildStatusLine()
 
+" Fix to make gvim window as large as possible without the white borders on my
+" Windows system. Does leave a small gap around the edge, but that's the
+" lesser evil.
+function! WinSize(cols, rows, xpos, ypos)
+    let &columns=a:cols
+    let &lines=a:rows
+    execute "winpos " . a:xpos . " " . a:ypos
+endfunction
+map <C-Up> :call WinSize(230, 57, 63, 11)<CR>
+map <C-Left> :call WinSize(114, 57, 63, 11)<CR>
+map <C-Right> :call WinSize(114, 57, 990, 11)<CR>
+
 " Jump to the last position when re-opening a file.
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
 
