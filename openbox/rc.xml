@@ -23,7 +23,7 @@
     </placement>
 
     <theme>
-        <name>TweakedArcDarker</name>
+        <name>gust-openbox-theme</name>
         <titleLayout>LIMC</titleLayout>
         <keepBorder>yes</keepBorder>
         <font place="ActiveWindow">

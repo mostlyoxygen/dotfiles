@@ -1,0 +1,92 @@
+#
+# A simple taskbar and clock, designed for use with the Gust Openbox theme.
+#
+
+# Background 1: main panel.
+rounded = 0
+border_width = 0
+background_color = #EFF0F1 100
+border_color = #EFF0F1 0
+
+# Background 2: inactive task.
+rounded = 0
+border_width = 4
+border_sides = T
+background_color = #EFF0F1 100
+border_color = #EFF0F1 100
+background_color_hover = #DFE0E1 100
+border_color_hover = #DFE0E1 100
+
+# Background 3: active task.
+rounded = 0
+border_width = 5
+border_sides = T
+background_color = #EFF0F1 100
+border_color = #3DAEE9 100
+background_color_hover = #DFE0E1 100
+border_color_hover = #3DAEE9 100
+
+# Background 4: minimised task.
+rounded = 0
+border_width = 5
+border_sides = T
+background_color = #EFF0F1 100
+border_color = #BDC3C7 100
+background_color_hover = #DFE0E1 100
+border_color_hover = #BDC3C7 100
+
+# Panel config.
+panel_items = T:S:C
+panel_monitor = all
+panel_position = bottom center horizontal
+panel_size = 100% 48
+panel_shrink = 0
+panel_margin = 0 0
+panel_padding = 4 4 8
+font_shadow = 0
+panel_background_id = 1
+wm_menu = 1
+panel_dock = 0
+panel_layer = normal
+
+# Taskbar config.
+taskbar_mode = single_desktop
+taskbar_hide_if_empty = 0
+taskbar_padding = 0 0 4
+taskbar_background_id = 1
+taskbar_hide_inactive_tasks = 0
+taskbar_hide_different_desktop = 1
+taskbar_sort_order = none
+task_align = left
+taskbar_name = 0
+
+task_icon = 1
+task_text = 1
+task_centered = 1
+task_tooltip = 0
+task_thumbnail = 0
+task_maximum_size = 200 36
+task_padding = 12 6
+task_font = Cantarell 11
+task_font_color = #232627 100
+task_background_id = 2
+task_active_font_color = #232627 100
+task_active_background_id = 3
+task_iconified_font_color = #31363B 100
+task_iconified_background_id = 4
+
+# System tray config.
+systray_padding = 10 10 5
+systray_background_id = 1
+systray_sort = ascending
+systray_icon_size = 0
+systray_monitor = primary
+
+# Clock config.
+time1_format = %H:%M
+time1_font = Cantarell 10
+time2_format = %d %b %Y
+time2_font = Cantarell 10
+clock_font_color = #232627 100
+clock_padding = 6 6
+clock_background_id = 1
